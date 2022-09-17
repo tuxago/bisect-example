@@ -20,15 +20,19 @@ func parseNumbers() []int {
 	return nb
 }
 
-func main() {
-
-	nb := parseNumbers()
-
+func parseMul() float64 {
 	mulStr := os.Args[len(os.Args)-1]
 	mul, err := strconv.ParseFloat(mulStr, 64)
 	if err != nil {
 		log.Fatalf("bad argument: %q: %v", mulStr, err)
 	}
+	return mul
+}
+
+func main() {
+
+	nb := parseNumbers()
+	mul := parseMul()
 
 	log.Println(mul, nb)
 	sum := compute(mul, nb)
