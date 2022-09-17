@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func parseNumbers() []int {
 	nbString := os.Args[1 : len(os.Args)-1]
 	var nb []int
 	for _, v := range nbString {
@@ -17,7 +17,11 @@ func main() {
 		}
 		nb = append(nb, i)
 	}
+}
 
+func main() {
+
+	nb := parseNumbers()
 	mulStr := os.Args[len(os.Args)-1]
 	mul, err := strconv.ParseFloat(mulStr, 64)
 	if err != nil {
