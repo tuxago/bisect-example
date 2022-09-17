@@ -7,8 +7,8 @@ import (
 	"strconv"
 )
 
-func parseNumbers() []int {
-	nbString := os.Args[1 : len(os.Args)-1]
+func parseNumbers(args []string) []int {
+	nbString := args
 	var nb []int
 	for _, v := range nbString {
 		i, err := strconv.Atoi(v)
@@ -30,7 +30,7 @@ func parseMul() float64 {
 }
 
 func main() {
-	nb := parseNumbers()
+	nb := parseNumbers(os.Args[1 : len(os.Args)-1])
 	mul := parseMul()
 
 	log.Println(mul, nb)
