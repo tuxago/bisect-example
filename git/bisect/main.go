@@ -30,7 +30,6 @@ func parseMul() float64 {
 }
 
 func main() {
-
 	nb := parseNumbers()
 	mul := parseMul()
 
