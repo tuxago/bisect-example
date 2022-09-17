@@ -17,11 +17,13 @@ func parseNumbers() []int {
 		}
 		nb = append(nb, i)
 	}
+	return nb
 }
 
 func main() {
 
 	nb := parseNumbers()
+
 	mulStr := os.Args[len(os.Args)-1]
 	mul, err := strconv.ParseFloat(mulStr, 64)
 	if err != nil {
